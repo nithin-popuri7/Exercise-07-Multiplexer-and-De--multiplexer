@@ -52,37 +52,77 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by:P.Siva Naga Nithin.
+RegisterNumber:212221240037.  
+
+```
+## Multiplexer:
+```
+module mul(I0,I1,I2,I3,S0,S1,Y);
+input I0,I1,I2,I3,S0,S1;
+output Y;
+wire P,Q,R,S,S0c,S1c;
+not(S0c,S0);
+nor(S1c,S1);
+and (P,S0c,S1c,I0);
+and(Q,S0c,S1,I1);
+and(R,S0,S1c,I2);
+and(S,S0,S1,I3);
+or(Y,P,Q,R,S);
+endmodule
+```
+### RTL Logic:
+<img width="960" alt="mul" src="https://user-images.githubusercontent.com/94154780/200118217-3bb4e5ec-8e49-4635-a08d-9df02e8049b0.png">
+
+
+### Timing Diagram:
+![multd](https://user-images.githubusercontent.com/94154780/200118205-c39ecbf2-3878-4717-a08a-5e602537b79d.jpeg)
+
+![multd1](https://user-images.githubusercontent.com/94154780/200118208-87b76124-dbfc-4937-8917-704785dc8c93.jpeg)
+
+![multd2](https://user-images.githubusercontent.com/94154780/200118434-35c7adcb-89e0-4ae7-aa5f-9e5b6d4f0df1.jpeg)
+
+![multd3](https://user-images.githubusercontent.com/94154780/200118438-34b6a2b8-074c-40d8-9aae-ba0271cb3650.jpeg)
+
+## TruthTable:
+
+![mul tt](https://user-images.githubusercontent.com/94154780/200118445-e25b5794-18bc-4e93-a8f4-92756199d732.png)
 
 
 
 
+### Demultiplexer:
+```
+module demul(Y0,Y1,Y2,Y3,S0,S1,I);![multd](https://user-images.githubusercontent.com/94154780/200118202-d1a9446b-98ec-460b-909e-d80e0820d03e.jpeg)
 
-
-### RTL LOGIC  
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
-
-### TRUTH TABLE 
+input I,S0,S1;
+output Y0,Y1,Y2,Y3;
+wire S0c,S1c;
+not(S0c,S0);
+nor(S1c,S1);
+and (Y0,I,S0c,S1c);
+and(Y1,I,S0c,S1);
+and(Y2,I,S0,S1c);
+and(Y3,I,S0,S1);
+endmodule
+```
 
 
 
+### RTL LOGIC:
+
+<img width="615" alt="demul" src="https://user-images.githubusercontent.com/94154780/200118898-e251b27a-fe17-4a39-9a75-cdeb95ac841d.png">
 
 
+### TIMING DIGRAM:
 
-### RESULTS 
+![demul td](https://user-images.githubusercontent.com/94154780/200118972-f7ae30d0-af6b-4df5-9f9f-f5ea3e16baac.png)
+
+### TRUTH TABLE:
+![demul tt](https://user-images.githubusercontent.com/94154780/200118992-14092433-c8d9-4481-b42e-4b3cbfc3fc96.png)
+
+
+### RESULTS:
+Hence 4x1 Multiplexer and 1x4 Demultiplexer is been implemented and verified using verilog programming and its output are validated.
