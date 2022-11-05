@@ -113,7 +113,8 @@ endmodule
 
 ### RTL LOGIC:
 
-<img width="615" alt="demul" src="https://user-images.githubusercontent.com/94154780/200118898-e251b27a-fe17-4a39-9a75-cdeb95ac841d.png">
+<img width="750" alt="demul1" src="https://user-images.githubusercontent.com/94154780/200119191-e944d001-fcc4-42d1-bf02-0b0553e656c6.png">
+
 
 
 ### TIMING DIGRAM:
